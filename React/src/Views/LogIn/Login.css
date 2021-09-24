@@ -1,0 +1,9 @@
+.main-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 1em;
+  background-color: darkseagreen;
+  padding: 2em;
+  margin: 3em;
+}
