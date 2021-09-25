@@ -1,3 +1,38 @@
-<div class="container">
-    <h1 class="text-center">¡Welcome to AngularJS!</h1>
+<div class="container my-2 p-2">
+    <h1 class="text-center p-2">¡Bienvenido a AngularJS!</h1>
+</div>
+<div class="text-center mx-auto" ng-controller="Principal as lista">
+    <div class="row g-2">
+        <h2 class="col-sm-auto">Producto:</h2>
+        <div class="col-sm-auto">
+            <input type="text" class="form-control" placeholder="Nombre" ng-model="nombre" />
+        </div>
+        <div class="col-sm-auto">
+            <input type="number" class="form-control" placeholder="Precio(₡)" min="0" ng-model="precio" />
+        </div>
+        <div class="col-lg-auto col-sm-auto">
+            <button ng-click="lista.agregarProducto()" ng-type="button" class="btn btn-primary mx-auto">Agregar</button>
+        </div>
+    </div>
+    <div class="mx-auto p-3">
+        <h2>Lista de productos:</h2>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Producto</th>
+                <th scope="col">Precio(₡)</th>
+                <th>Eliminar</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr ng-repeat="item in lista.productos">
+                <th scope="row">{{item.id}}</th>
+                <th>{{item.nombre}}</th>
+                <th>{{item.precio}}</th>
+                <th><button data={{item.id}} class="btn btn-danger" ng-click="lista.eliminarProducto($event)" ng-type="button">X</button></th>
+              </tr>
+            </tbody>
+          </table>
+    </div>
 </div>
