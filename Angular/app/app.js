@@ -1,4 +1,4 @@
-var app = angular.module('mainApp', ['ngRoute']);
+var app = angular.module('mainApp', ['ngRoute', 'menu', 'boton']);
 
 app.config(['$routeProvider', function ($routeProvider) {
     console.log($routeProvider.when);
@@ -26,7 +26,6 @@ app.run(function () {
 
 
 app.controller('Principal', function ($scope) {
-    $scope.message = "Hola soy un mensaje";
     var lista = this;
     var id = 1;
     lista.productos = [];
